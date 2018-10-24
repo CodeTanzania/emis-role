@@ -1,0 +1,12 @@
+{
+  "name": "Role",
+  "title": "Role",
+  "version": "1.0.0",
+  "url": "https://emis-role.herokuapp.com/v1",
+  "sampleUrl": "https://emis-role.herokuapp.com/v1",
+  "template":
+  {
+    "withCompare": true,
+    "withGenerator": true
+  }
+}

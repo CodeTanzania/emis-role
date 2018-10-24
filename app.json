@@ -1,0 +1,32 @@
+{
+  "name": "role",
+  "description": "A representation on how a party acts or, in other words, what role party plays in event of emergency(or disaster).",
+  "repository": "https://github.com/CodeTanzania/emis-role.git",
+  "keywords": [
+    "codetanzania",
+    "emis",
+    "emis-module",
+    "mongoose",
+    "role",
+    "function",
+    "responsibility",
+    "duty",
+    "rights",
+    "control",
+    "rbac"
+  ],
+  "addons": [
+    "mongolab"
+  ],
+  "env":
+  {
+    "NPM_CONFIG_PRODUCTION":
+    {
+      "value": "false"
+    },
+    "YARN_PRODUCTION":
+    {
+      "value": "false"
+    }
+  }
+}
