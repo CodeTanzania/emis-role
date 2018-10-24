@@ -1,6 +1,6 @@
 {
   "name": "role",
-  "description": "A representation on how a party(or stakeholder) acts or, in other words, what role party(or stakeholder) plays in event of emergency(or disaster).",
+  "description": "A representation on how a party acts or, in other words, what role party plays in event of emergency(or disaster).",
   "repository": "https://github.com/CodeTanzania/emis-role.git",
   "keywords": [
     "codetanzania",
