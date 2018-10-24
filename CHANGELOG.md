@@ -1,3 +1,6 @@
+# 1.0.1 / 24-10-2018
+- Build API Doc
+
 # 1.0.0 / 24-10-2018
 - Clone @lykmapipo/role
 - Refactor package details for emis-role
