@@ -1,8 +1,8 @@
 # emis-role
 
-[![Build Status](https://travis-ci.org/CodeTanzania/emis-role.svg?branch=master)](https://travis-ci.org/CodeTanzania/emis-role)
+[![Build Status](https://travis-ci.org/CodeTanzania/emis-role.svg?branch=develop)](https://travis-ci.org/CodeTanzania/emis-role)
 [![Dependencies Status](https://david-dm.org/CodeTanzania/emis-role/status.svg?style=flat-square)](https://david-dm.org/CodeTanzania/emis-role)
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/CodeTanzania/emis-role/tree/master)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/CodeTanzania/emis-role/tree/develop)
 
 A representation on how a party(or stakeholder) acts or, in other words, what role party(or stakeholder) plays in event of emergency(or disaster).
 
