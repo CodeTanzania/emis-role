@@ -8,6 +8,9 @@
     "emis-module",
     "mongoose",
     "role",
+    "function",
+    "responsibility",
+    "duty",
     "rights",
     "control",
     "rbac"

@@ -17,15 +17,20 @@
     "emis-module",
     "mongoose",
     "role",
+    "function",
+    "responsibility",
+    "duty",
     "rights",
     "control",
     "rbac"
   ],
-  "contributors": [{
-    "name": "lykmapipo",
-    "email": "lallyelias87@gmail.com",
-    "url": "https://github.com/lykmapipo"
-  }],
+  "contributors": [
+    {
+      "name": "lykmapipo",
+      "email": "lallyelias87@gmail.com",
+      "url": "https://github.com/lykmapipo"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CodeTanzania/emis-role/issues",
@@ -37,19 +42,21 @@
     "apidoc": "https://lykmapipo.github.io/role/",
     "client_id": "",
     "client_secret": "",
-    "urls": [{
-      "resource": "Role",
-      "schema": "https://emis-role.herokuapp.com/v1/roles/schema",
-      "link": "https://emis-role.herokuapp.com/v1/roles",
-      "scopes": [
-        "role:*"
-      ],
-      "methods": [
-        "get",
-        "put",
-        "patch"
-      ]
-    }]
+    "urls": [
+      {
+        "resource": "Role",
+        "schema": "https://emis-role.herokuapp.com/v1/roles/schema",
+        "link": "https://emis-role.herokuapp.com/v1/roles",
+        "scopes": [
+          "role:*"
+        ],
+        "methods": [
+          "get",
+          "put",
+          "patch"
+        ]
+      }
+    ]
   },
   "devDependencies": {
     "@benmaruchu/faker": "^4.2.1",

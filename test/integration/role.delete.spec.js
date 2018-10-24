@@ -16,7 +16,7 @@ describe('Role Delete', () => {
     let role;
 
     before((done) => {
-      role = Role.fake();z
+      role = Role.fake();
       role.post((error, created) => {
         role = created;
         done(error, created);
