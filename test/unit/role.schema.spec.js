@@ -67,6 +67,7 @@ describe('Role Schema', () => {
     expect(responsibilities.options).to.be.an('object');
     expect(responsibilities.options.type).to.exist;
     expect(responsibilities.options.index).to.be.true;
+    expect(responsibilities.options.default).to.be.undefined;
     expect(responsibilities.options.searchable).to.be.true;
     expect(responsibilities.options.fake).to.exist;
   });
