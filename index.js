@@ -68,7 +68,11 @@ const roleRouter =
 
 
 /* export party router */
-exports.router = exports.roleRouter = roleRouter;
+exports.roleRouter = roleRouter;
+
+
+/* export router api version */
+exports.apiVersion = roleRouter.apiVersion;
 
 
 /* export app */

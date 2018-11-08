@@ -1,6 +1,6 @@
 {
   "name": "@codetanzania/emis-role",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A representation on how a party(or stakeholder) acts or, in other words, what role party(or stakeholder) plays in event of emergency(or disaster).",
   "main": "index.js",
   "scripts": {
@@ -13,9 +13,23 @@
   },
   "keywords": [
     "codetanzania",
+    "lykmapipo",
     "emis",
     "emis-module",
-    "mongoose",
+    "disaster",
+    "emergency",
+    "hazard",
+    "risk",
+    "loss",
+    "exposure",
+    "resilience",
+    "warning",
+    "assessment",
+    "drm",
+    "mitigation",
+    "preparedness",
+    "response",
+    "recovery",
     "role",
     "function",
     "responsibility",
@@ -24,13 +38,11 @@
     "control",
     "rbac"
   ],
-  "contributors": [
-    {
-      "name": "lykmapipo",
-      "email": "lallyelias87@gmail.com",
-      "url": "https://github.com/lykmapipo"
-    }
-  ],
+  "contributors": [{
+    "name": "lykmapipo",
+    "email": "lallyelias87@gmail.com",
+    "url": "https://github.com/lykmapipo"
+  }],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CodeTanzania/emis-role/issues",
@@ -42,28 +54,26 @@
     "apidoc": "https://lykmapipo.github.io/role/",
     "client_id": "",
     "client_secret": "",
-    "urls": [
-      {
-        "resource": "Role",
-        "schema": "https://emis-role.herokuapp.com/v1/roles/schema",
-        "link": "https://emis-role.herokuapp.com/v1/roles",
-        "scopes": [
-          "role:*"
-        ],
-        "methods": [
-          "get",
-          "put",
-          "patch"
-        ]
-      }
-    ]
+    "urls": [{
+      "resource": "Role",
+      "schema": "https://emis-role.herokuapp.com/v1/roles/schema",
+      "link": "https://emis-role.herokuapp.com/v1/roles",
+      "scopes": [
+        "role:*"
+      ],
+      "methods": [
+        "get",
+        "put",
+        "patch"
+      ]
+    }]
   },
   "devDependencies": {
     "@benmaruchu/faker": "^4.2.1",
     "@codetanzania/majifix-common": "^0.11.1",
-    "@lykmapipo/env": "^0.3.1",
-    "@lykmapipo/express-common": "^0.9.2",
-    "@lykmapipo/permission": "^0.3.0",
+    "@lykmapipo/env": "^0.3.2",
+    "@lykmapipo/express-common": "^0.9.3",
+    "@lykmapipo/permission": "^0.4.0",
     "async": "^2.6.1",
     "chai": "^4.2.0",
     "express": "^4.16.4",
@@ -74,23 +84,23 @@
     "grunt-mocha-test": "^0.13.3",
     "jshint-stylish": "^2.2.1",
     "lodash": "^4.17.11",
-    "mongoose-rest-actions": "^0.18.2",
+    "mongoose-rest-actions": "^0.20.2",
     "mongoose-schema-jsonschema": "^1.1.15",
     "mocha": "^5.2.0",
-    "mongoose": "^5.3.7",
-    "sinon": "^7.1.0",
+    "mongoose": "^5.3.10",
+    "sinon": "^7.1.1",
     "sinon-chai": "^3.2.0",
     "sinon-mongoose": "^2.2.1",
     "supertest": "^3.3.0"
   },
   "peerDependencies": {
-    "@lykmapipo/env": "^0.3.1",
-    "@lykmapipo/express-common": "^0.9.2",
-    "@lykmapipo/permission": "^0.3.0",
+    "@lykmapipo/env": "^0.3.2",
+    "@lykmapipo/express-common": "^0.9.3",
+    "@lykmapipo/permission": "^0.4.0",
     "async": "^2.6.1",
     "express": "^4.16.4",
     "lodash": "^4.17.11",
-    "mongoose-rest-actions": "^0.18.2",
+    "mongoose-rest-actions": "^0.20.2",
     "mongoose-schema-jsonschema": "^1.1.15"
   },
   "dependencies": {},
