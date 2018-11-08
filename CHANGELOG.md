@@ -1,3 +1,12 @@
+# 1.0.3 / 08-11-2018
+- Add role abbreviation field
+- Add role upsert specs
+- Add role seed specs
+- Allow seed administrator permissions on upsert administrator role
+- Improve sample with real seed
+- Improve integration specs
+- Force latest dependencies
+
 # 1.0.2 / 27-10-2018
 - Force responsibilities to undefined if not given
 - Force latest dependencies
