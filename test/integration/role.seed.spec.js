@@ -9,10 +9,15 @@ const { Role } = require(path.join(__dirname, '..', '..'));
 
 describe('Role Seed', () => {
 
-  let permissions;
+  const SEEDS_PATH = process.env.SEEDS_PATH;
+  let permissions = [];
 
   before((done) => {
     Role.deleteMany(done);
+  });
+
+  before(() => {
+    process.env.SEEDS_PATH = path.join(__dirname, '..', 'fixtures');
   });
 
   it('should be able to seed', (done) => {
@@ -68,7 +73,7 @@ describe('Role Seed', () => {
   });
 
   it('should seed .env resources', (done) => {
-    process.env.ROLE_SEED = 'IT Officer,Billing Officer';
+    process.env.ROLE_SEEDS = 'IT Officer,Billing Officer';
     Role.seed((error, seeded) => {
       expect(error).to.not.exist;
       expect(seeded).to.exist;
@@ -79,8 +84,32 @@ describe('Role Seed', () => {
     });
   });
 
+  it('should be able to seed from environment', (done) => {
+    Role.seed((error, seeded) => {
+      expect(error).to.not.exist;
+      expect(seeded).to.exist;
+      expect(seeded).to.length.at.least(1);
+      expect(_.find(seeded, { name: 'Supervisor' })).to.exist;
+      done(error, seeded);
+    });
+  });
+
+  it('should not throw if seed from environment exist', (done) => {
+    Role.seed((error, seeded) => {
+      expect(error).to.not.exist;
+      expect(seeded).to.exist;
+      expect(seeded).to.length.at.least(1);
+      expect(_.find(seeded, { name: 'Supervisor' })).to.exist;
+      done(error, seeded);
+    });
+  });
+
   after((done) => {
     Role.deleteMany(done);
+  });
+
+  after(() => {
+    process.env.SEEDS_PATH = SEEDS_PATH;
   });
 
 });
