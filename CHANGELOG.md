@@ -1,3 +1,8 @@
+# 1.0.4 / 18-11-2018
+- Force latest dependencies
+- Improve role model unit spec
+- Build latest apidoc 
+
 # 1.0.3 / 08-11-2018
 - Add role abbreviation field
 - Add role upsert specs
