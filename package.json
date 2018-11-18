@@ -38,11 +38,13 @@
     "control",
     "rbac"
   ],
-  "contributors": [{
-    "name": "lykmapipo",
-    "email": "lallyelias87@gmail.com",
-    "url": "https://github.com/lykmapipo"
-  }],
+  "contributors": [
+    {
+      "name": "lykmapipo",
+      "email": "lallyelias87@gmail.com",
+      "url": "https://github.com/lykmapipo"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CodeTanzania/emis-role/issues",
@@ -54,26 +56,42 @@
     "apidoc": "https://lykmapipo.github.io/role/",
     "client_id": "",
     "client_secret": "",
-    "urls": [{
-      "resource": "Role",
-      "schema": "https://emis-role.herokuapp.com/v1/roles/schema",
-      "link": "https://emis-role.herokuapp.com/v1/roles",
-      "scopes": [
-        "role:*"
-      ],
-      "methods": [
-        "get",
-        "put",
-        "patch"
-      ]
-    }]
+    "urls": [
+      {
+        "resource": "Permission",
+        "schema": "https://emis-role.herokuapp.com/v1/permissions/schema",
+        "link": "https://emis-role.herokuapp.com/v1/permissions",
+        "scopes": [
+          "permission:*"
+        ],
+        "methods": [
+          "get",
+          "put",
+          "patch"
+        ]
+      },
+      {
+        "resource": "Role",
+        "schema": "https://emis-role.herokuapp.com/v1/roles/schema",
+        "link": "https://emis-role.herokuapp.com/v1/roles",
+        "scopes": [
+          "role:*"
+        ],
+        "methods": [
+          "post",
+          "get",
+          "put",
+          "patch"
+        ]
+      }
+    ]
   },
   "devDependencies": {
     "@benmaruchu/faker": "^4.2.1",
     "@codetanzania/majifix-common": "^0.11.1",
     "@lykmapipo/env": "^0.3.2",
     "@lykmapipo/express-common": "^0.9.3",
-    "@lykmapipo/permission": "^0.4.0",
+    "@lykmapipo/permission": "^0.4.1",
     "async": "^2.6.1",
     "chai": "^4.2.0",
     "express": "^4.16.4",
@@ -87,7 +105,7 @@
     "mongoose-rest-actions": "^0.20.2",
     "mongoose-schema-jsonschema": "^1.1.15",
     "mocha": "^5.2.0",
-    "mongoose": "^5.3.10",
+    "mongoose": "^5.3.12",
     "sinon": "^7.1.1",
     "sinon-chai": "^3.2.0",
     "sinon-mongoose": "^2.2.1",
@@ -96,7 +114,7 @@
   "peerDependencies": {
     "@lykmapipo/env": "^0.3.2",
     "@lykmapipo/express-common": "^0.9.3",
-    "@lykmapipo/permission": "^0.4.0",
+    "@lykmapipo/permission": "^0.4.1",
     "async": "^2.6.1",
     "express": "^4.16.4",
     "lodash": "^4.17.11",
