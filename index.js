@@ -28,57 +28,100 @@ const path = require('path');
 const _ = require('lodash');
 const app = require('@lykmapipo/express-common');
 const mongoose = require('mongoose');
-require('mongoose-schema-jsonschema')(mongoose);
-
-
-/* declarations */
 const pkg = require(path.join(__dirname, 'package.json'));
-const fields = [
-  'name',
-  'description',
-  'version',
-  'license',
-  'homepage',
-  'repository',
-  'bugs',
-  'sandbox',
-  'contributors'
-];
+require('mongoose-schema-jsonschema')(mongoose);
+const { Permission, permissionRouter } = require('@lykmapipo/permission');
+const roleRouter = require(path.join(__dirname, 'lib', 'role.http.router'));
 
 
-/* extract information from package.json */
-const info = _.merge({}, _.pick(pkg, fields));
+/**
+ * @name info
+ * @description package information
+ * @type {Object}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 0.1.0
+ * @version 0.1.0
+ */
+exports.info = _.merge({}, _.pick(pkg, [
+  'name', 'description', 'version', 'license',
+  'homepage', 'repository', 'bugs', 'sandbox', 'contributors'
+]));
 
 
-/* export package(module) info */
-exports.info = info;
+/**
+ * @name Permission
+ * @description Permission model
+ * @type {mongoose.Model}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 0.1.0
+ * @version 0.1.0
+ */
+exports.Permission = Permission;
 
 
-/* import models */
-const Role = require(path.join(__dirname, 'lib', 'role.model'));
+/**
+ * @name Role
+ * @description Role model
+ * @type {mongoose.Model}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 0.1.0
+ * @version 0.1.0
+ */
+exports.Role = require(path.join(__dirname, 'lib', 'role.model'));
 
 
-/* export models */
-exports.Role = Role;
+/**
+ * @name permissionRouter
+ * @description permission http router
+ * @type {express.Router}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 0.1.0
+ * @version 0.1.0
+ */
+exports.permissionRouter = permissionRouter;
 
 
-/* import routers*/
-const roleRouter =
-  require(path.join(__dirname, 'lib', 'role.http.router'));
-
-
-/* export party router */
+/**
+ * @name roleRouter
+ * @description role http router
+ * @type {express.Router}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 0.1.0
+ * @version 0.1.0
+ */
 exports.roleRouter = roleRouter;
 
 
-/* export router api version */
+/**
+ * @name apiVersion
+ * @description http router api version
+ * @type {String}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 0.1.0
+ * @version 0.1.0
+ */
 exports.apiVersion = roleRouter.apiVersion;
 
 
-/* export app */
+/**
+ * @name app
+ * @description express app
+ * @type {Object}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 0.1.0
+ * @version 0.1.0
+ */
 Object.defineProperty(exports, 'app', {
   get() {
     /* @todo bind oauth middlewares authenticate, token, authorize */
+    app.mount(permissionRouter);
     app.mount(roleRouter);
     return app;
   }
