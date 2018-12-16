@@ -1,3 +1,8 @@
+# 1.1.0 / 16-12-2018
+- Build latest apidoc
+- Force latest dependencies & audit fix
+- Add taggable plugin
+
 # 1.0.4 / 18-11-2018
 - Force latest dependencies
 - Improve role model unit spec
