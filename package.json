@@ -1,6 +1,6 @@
 {
   "name": "@codetanzania/emis-role",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "A representation on how a party(or stakeholder) acts or, in other words, what role party(or stakeholder) plays in event of emergency(or disaster).",
   "main": "index.js",
   "scripts": {
@@ -111,7 +111,6 @@
     "@lykmapipo/express-common": ">=0.9.4",
     "@lykmapipo/permission": ">=0.6.0",
     "async": ">=2.6.1",
-    "express": ">=4.16.4",
     "lodash": ">=4.17.11",
     "mongoose-rest-actions": ">=0.22.1"
   },
