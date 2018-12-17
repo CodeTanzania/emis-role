@@ -26,12 +26,11 @@
 /* dependencies */
 const path = require('path');
 const _ = require('lodash');
+const { include } = require('@lykmapipo/include');
 const app = require('@lykmapipo/express-common');
-const mongoose = require('mongoose');
-const pkg = require(path.join(__dirname, 'package.json'));
-require('mongoose-schema-jsonschema')(mongoose);
 const { Permission, permissionRouter } = require('@lykmapipo/permission');
-const roleRouter = require(path.join(__dirname, 'lib', 'role.http.router'));
+const pkg = include(__dirname, 'package.json');
+const roleRouter = include(__dirname, 'lib', 'role.http.router');
 
 
 /**
