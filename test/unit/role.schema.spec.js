@@ -6,7 +6,7 @@ const { expect } = require('chai');
 const { include } = require('@lykmapipo/include');
 const { Schema } = require('mongoose');
 const { Permission } = require('@lykmapipo/permission');
-const Role = include(__dirname, '..', '..', 'lib', 'role.model');
+const { Role } = include(__dirname, '..', '..');
 
 
 describe('Role Schema', () => {
