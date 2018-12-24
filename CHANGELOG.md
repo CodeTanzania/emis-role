@@ -1,3 +1,8 @@
+# 1.1.2 / 24-12-2018
+- Build latest apidoc
+- Force latest dependencies & audit fix
+- Refactor and improve specs readability
+
 # 1.1.0 / 16-12-2018
 - Remove unused mongoose-schema-jsonschema
 - Build latest apidoc

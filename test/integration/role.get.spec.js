@@ -2,15 +2,14 @@
 
 
 /* dependencies */
-const path = require('path');
 const { expect } = require('chai');
-const { Role } = require(path.join(__dirname, '..', '..'));
+const { include } = require('@lykmapipo/include');
+const { clear } = require('@lykmapipo/mongoose-test-helpers');
+const { Role } = include(__dirname, '..', '..');
 
 describe('Role Get', () => {
 
-  before((done) => {
-    Role.deleteMany(done);
-  });
+  before((done) => clear(done));
 
   let roles = ['IT Officer', 'Billing Officer', 'Human Resource'];
 
@@ -112,8 +111,6 @@ describe('Role Get', () => {
 
   });
 
-  after((done) => {
-    Role.deleteMany(done);
-  });
+  after((done) => clear(done));
 
 });

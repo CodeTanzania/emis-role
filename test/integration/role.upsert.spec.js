@@ -2,25 +2,21 @@
 
 
 /* dependencies */
-const path = require('path');
 const faker = require('@benmaruchu/faker');
 const { expect } = require('chai');
+const { include } = require('@lykmapipo/include');
+const { clear } = require('@lykmapipo/mongoose-test-helpers');
 const { Permission } = require('@lykmapipo/permission');
-const { Role } = require(path.join(__dirname, '..', '..'));
+const { Role } = include(__dirname, '..', '..');
 
 
 describe('Role Upsert', () => {
 
   let role;
 
-  before((done) => {
-    Role.deleteMany(done);
-  });
+  before((done) => clear(done));
 
-  before((done) => {
-    Permission.deleteMany(done);
-  });
-
+  before((done) => clear(done));
 
   before((done) => {
     Permission.seed(done);
@@ -93,12 +89,8 @@ describe('Role Upsert', () => {
     });
   });
 
-  after((done) => {
-    Role.deleteMany(done);
-  });
+  after((done) => clear(done));
 
-  after((done) => {
-    Permission.deleteMany(done);
-  });
+  after((done) => clear(done));
 
 });

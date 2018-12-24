@@ -4,7 +4,7 @@
 /* dependencies */
 const { expect } = require('chai');
 const { include } = require('@lykmapipo/include');
-const Role = include(__dirname, '..', '..', 'lib', 'role.model');
+const { Role } = include(__dirname, '..', '..');
 
 
 describe('Role Instance', () => {

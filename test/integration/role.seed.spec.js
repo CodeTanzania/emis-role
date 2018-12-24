@@ -5,16 +5,15 @@
 const path = require('path');
 const _ = require('lodash');
 const { expect } = require('chai');
-const { Role } = require(path.join(__dirname, '..', '..'));
+const { include } = require('@lykmapipo/include');
+const { clear } = require('@lykmapipo/mongoose-test-helpers');
+const { Role } = include(__dirname, '..', '..');
 
 describe('Role Seed', () => {
 
   const SEEDS_PATH = process.env.SEEDS_PATH;
-  let permissions = [];
 
-  before((done) => {
-    Role.deleteMany(done);
-  });
+  before((done) => clear(done));
 
   before(() => {
     process.env.SEEDS_PATH = path.join(__dirname, '..', 'fixtures');
@@ -25,7 +24,6 @@ describe('Role Seed', () => {
       expect(error).to.not.exist;
       expect(seeded).to.exist;
       expect(seeded).to.length.at.least(1);
-      permissions = seeded;
       done(error, seeded);
     });
   });
@@ -104,9 +102,7 @@ describe('Role Seed', () => {
     });
   });
 
-  after((done) => {
-    Role.deleteMany(done);
-  });
+  after((done) => clear(done));
 
   after(() => {
     process.env.SEEDS_PATH = SEEDS_PATH;
