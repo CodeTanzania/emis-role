@@ -121,7 +121,7 @@
     "@lykmapipo/permission": ">=0.7.0",
     "async": ">=2.6.2",
     "lodash": ">=4.17.11",
-    "mongoose-rest-actions": ">=0.23.0"
+    "mongoose-rest-actions": ">=0.23.1"
   },
   "engines": {
     "node": ">=8.11.1",

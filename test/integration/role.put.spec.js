@@ -23,12 +23,13 @@ describe('Role Put', function () {
     });
 
     it('should be able to put', (done) => {
-      role = role.fakeOnly('description');
+      role = role.fakeOnly('description', 'abbreviation');
       Role.put(role._id, role, (error, updated) => {
         expect(error).to.not.exist;
         expect(updated).to.exist;
         expect(updated._id).to.eql(role._id);
         expect(updated.name).to.eql(role.name);
+        expect(updated.abbreviation).to.eql(role.abbreviation);
         done(error, updated);
       });
     });
@@ -58,12 +59,13 @@ describe('Role Put', function () {
     });
 
     it('should be able to put', (done) => {
-      role = role.fakeOnly('description');
+      role = role.fakeOnly('description', 'abbreviation');
       role.put((error, updated) => {
         expect(error).to.not.exist;
         expect(updated).to.exist;
         expect(updated._id).to.eql(role._id);
         expect(updated.name).to.eql(role.name);
+        expect(updated.abbreviation).to.eql(role.abbreviation);
         done(error, updated);
       });
     });
