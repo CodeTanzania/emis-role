@@ -1,11 +1,17 @@
 {
   "name": "@codetanzania/emis-role",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "A representation on how a party(or stakeholder) acts or, in other words, what role party(or stakeholder) plays in event of emergency(or disaster).",
   "main": "index.js",
   "scripts": {
     "test": "grunt test",
-    "dev": "BASE_PATH=./examples node ./examples/app.js"
+    "integration:test": "grunt integration",
+    "http:test": "grunt http",
+    "unit:test": "grunt unit",
+    "doc": "grunt doc",
+    "dev": "npm run seed && npm run start",
+    "start": "BASE_PATH=./examples node ./examples/app.js",
+    "seed": "BASE_PATH=./examples node ./examples/seed.js"
   },
   "repository": {
     "type": "git",
@@ -53,7 +59,7 @@
   "homepage": "https://github.com/CodeTanzania/emis-role",
   "sandbox": {
     "url": "https://emis-role.herokuapp.com",
-    "apidoc": "https://lykmapipo.github.io/role/",
+    "apidoc": "https://codetanzania.github.io/emis-role/",
     "client_id": "",
     "client_secret": "",
     "urls": [
@@ -89,7 +95,7 @@
   "devDependencies": {
     "@benmaruchu/faker": "^4.2.1",
     "@codetanzania/majifix-common": "^0.11.1",
-    "@lykmapipo/mongoose-test-helpers": ">=0.2.4",
+    "@lykmapipo/mongoose-test-helpers": ">=0.3.0",
     "chai": "^4.2.0",
     "grunt": "^1.0.3",
     "grunt-apidoc": "^0.11.0",
@@ -98,23 +104,24 @@
     "grunt-mocha-test": "^0.13.3",
     "jshint-stylish": "^2.2.1",
     "mocha": "^5.2.0",
-    "mongoose": ">=5.4.0",
-    "sinon": "^7.2.2",
+    "mongoose": ">=5.4.12",
+    "sinon": "^7.2.3",
     "sinon-chai": "^3.3.0",
     "sinon-mongoose": "^2.2.1",
-    "supertest": "^3.3.0"
+    "supertest": "^3.4.2"
   },
   "peerDependencies": {
-    "mongoose": ">=5.4.0"
+    "mongoose": ">=5.4.12"
   },
   "dependencies": {
-    "@lykmapipo/env": ">=0.3.3",
-    "@lykmapipo/express-common": ">=0.10.0",
-    "@lykmapipo/include": ">=0.1.1",
-    "@lykmapipo/permission": ">=0.6.0",
-    "async": ">=2.6.1",
+    "@lykmapipo/common": ">=0.8.0",
+    "@lykmapipo/env": ">=0.5.0",
+    "@lykmapipo/express-common": ">=0.10.2",
+    "@lykmapipo/include": ">=0.2.0",
+    "@lykmapipo/permission": ">=0.7.0",
+    "async": ">=2.6.2",
     "lodash": ">=4.17.11",
-    "mongoose-rest-actions": ">=0.22.3"
+    "mongoose-rest-actions": ">=0.23.0"
   },
   "engines": {
     "node": ">=8.11.1",

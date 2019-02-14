@@ -1,3 +1,9 @@
+#### 1.2.0 (2019-02-14)
+
+##### Refactors
+
+*  remove type and responsibilities ([2bef8ac2](https://github.com/CodeTanzania/emis-role/commit/2bef8ac21de8fa73ab116e28030389f70a2140be))
+
 # 1.1.2 / 24-12-2018
 - Build latest apidoc
 - Force latest dependencies & audit fix

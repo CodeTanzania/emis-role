@@ -66,16 +66,6 @@ describe('Role Statics', () => {
     expect(Role.ADMINISTRATOR_ROLE_NAME).to.be.equal('Administrator');
   });
 
-  it('should expose default role type', () => {
-    expect(Role.DEFAULT_ROLE_TYPE).to.exist;
-    expect(Role.DEFAULT_ROLE_TYPE).to.be.equal('System');
-  });
-
-  it('should expose role types', () => {
-    expect(Role.ROLE_TYPES).to.exist;
-    expect(Role.ROLE_TYPES).to.be.eql(['System', 'Assignable']);
-  });
-
   it('should expose population options', () => {
     expect(Role.OPTION_AUTOPOPULATE).to.exist;
     expect(Role.OPTION_AUTOPOPULATE).to.be.eql({

@@ -23,7 +23,7 @@ describe('Role HTTP Spec', () => {
 
   it('should handle HTTP GET on /roles', (done) => {
     request(app)
-      .get(`/v${apiVersion}/roles`)
+      .get(`/${apiVersion}/roles`)
       .set('Accept', 'application/json')
       .expect(200)
       .expect('Content-Type', /json/)
@@ -48,7 +48,7 @@ describe('Role HTTP Spec', () => {
   it('should handle HTTP GET on /roles/id:', (done) => {
     request(app)
       .get(
-        `/v${apiVersion}/roles/${role._id}`
+        `/${apiVersion}/roles/${role._id}`
       )
       .set('Accept', 'application/json')
       .expect(200)
@@ -69,7 +69,7 @@ describe('Role HTTP Spec', () => {
     const patch = role.fakeOnly('description');
     request(app)
       .patch(
-        `/v${apiVersion}/roles/${role._id}`
+        `/${apiVersion}/roles/${role._id}`
       )
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
@@ -93,7 +93,7 @@ describe('Role HTTP Spec', () => {
     const put = role.fakeOnly('description');
     request(app)
       .put(
-        `/v${apiVersion}/roles/${role._id}`
+        `/${apiVersion}/roles/${role._id}`
       )
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')

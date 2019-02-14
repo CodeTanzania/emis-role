@@ -24,12 +24,12 @@
 
 
 /* dependencies */
-const path = require('path');
-const _ = require('lodash');
+const { pkg } = require('@lykmapipo/common');
 const { include } = require('@lykmapipo/include');
+const { apiVersion } = require('@lykmapipo/env');
 const app = require('@lykmapipo/express-common');
 const { Permission, permissionRouter } = require('@lykmapipo/permission');
-const pkg = include(__dirname, 'package.json');
+const Role = include(__dirname, 'lib', 'role.model');
 const roleRouter = include(__dirname, 'lib', 'role.http.router');
 
 
@@ -39,13 +39,13 @@ const roleRouter = include(__dirname, 'lib', 'role.http.router');
  * @type {Object}
  *
  * @author lally elias <lallyelias87@gmail.com>
- * @since 0.1.0
+ * @since 1.0.0
  * @version 0.1.0
  */
-exports.info = _.merge({}, _.pick(pkg, [
+exports.info = pkg(
   'name', 'description', 'version', 'license',
   'homepage', 'repository', 'bugs', 'sandbox', 'contributors'
-]));
+);
 
 
 /**
@@ -69,7 +69,7 @@ exports.Permission = Permission;
  * @since 0.1.0
  * @version 0.1.0
  */
-exports.Role = require(path.join(__dirname, 'lib', 'role.model'));
+exports.Role = Role;
 
 
 /**
@@ -105,7 +105,7 @@ exports.roleRouter = roleRouter;
  * @since 0.1.0
  * @version 0.1.0
  */
-exports.apiVersion = roleRouter.apiVersion;
+exports.apiVersion = apiVersion();
 
 
 /**
