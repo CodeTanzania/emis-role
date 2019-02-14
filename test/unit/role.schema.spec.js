@@ -10,22 +10,6 @@ const { Role } = include(__dirname, '..', '..');
 
 
 describe('Role Schema', () => {
-
-  it('should have type field', () => {
-    const type = Role.path('type');
-
-    expect(type).to.exist;
-    expect(type).to.be.instanceof(Schema.Types.String);
-    expect(type.options).to.exist;
-    expect(type.options).to.be.an('object');
-    expect(type.options.type).to.exist;
-    expect(type.options.trim).to.be.true;
-    expect(type.options.enum).to.exist;
-    expect(type.options.index).to.be.true;
-    expect(type.options.searchable).to.be.true;
-    expect(type.options.fake).to.exist;
-  });
-
   it('should have name field', () => {
     const name = Role.path('name');
 
@@ -56,20 +40,6 @@ describe('Role Schema', () => {
     expect(description.options.index).to.be.true;
     expect(description.options.searchable).to.be.true;
     expect(description.options.fake).to.exist;
-  });
-
-  it('should have responsibilities field', () => {
-    const responsibilities = Role.path('responsibilities');
-
-    expect(responsibilities).to.exist;
-    expect(responsibilities).to.be.instanceof(Schema.Types.Array);
-    expect(responsibilities.options).to.exist;
-    expect(responsibilities.options).to.be.an('object');
-    expect(responsibilities.options.type).to.exist;
-    expect(responsibilities.options.index).to.be.true;
-    expect(responsibilities.options.default).to.be.undefined;
-    expect(responsibilities.options.searchable).to.be.true;
-    expect(responsibilities.options.fake).to.exist;
   });
 
   it('should have permissions field', () => {
