@@ -83,13 +83,6 @@
           },
           {
             "group": "Success 200",
-            "type": "String[]",
-            "optional": true,
-            "field": "responsibilities",
-            "description": "<p>A duties, obligation or functions performed(or assigned) to a role.</p>"
-          },
-          {
-            "group": "Success 200",
             "type": "Object[]",
             "optional": true,
             "field": "permissions",
@@ -231,13 +224,6 @@
             "optional": true,
             "field": "description",
             "description": "<p>A brief summary about a role if available i.e additional details that clarify what a role for</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String[]",
-            "optional": true,
-            "field": "responsibilities",
-            "description": "<p>A duties, obligation or functions performed(or assigned) to a role.</p>"
           },
           {
             "group": "Success 200",
@@ -438,13 +424,6 @@
           },
           {
             "group": "Success 200",
-            "type": "String[]",
-            "optional": true,
-            "field": "data.responsibilities",
-            "description": "<p>A duties, obligation or functions performed(or assigned) to a role.</p>"
-          },
-          {
-            "group": "Success 200",
             "type": "Date",
             "optional": false,
             "field": "data.createdAt",
@@ -631,13 +610,6 @@
           },
           {
             "group": "Success 200",
-            "type": "String[]",
-            "optional": true,
-            "field": "responsibilities",
-            "description": "<p>A duties, obligation or functions performed(or assigned) to a role.</p>"
-          },
-          {
-            "group": "Success 200",
             "type": "Object[]",
             "optional": true,
             "field": "permissions",
@@ -782,13 +754,6 @@
           },
           {
             "group": "Success 200",
-            "type": "String[]",
-            "optional": true,
-            "field": "responsibilities",
-            "description": "<p>A duties, obligation or functions performed(or assigned) to a role.</p>"
-          },
-          {
-            "group": "Success 200",
             "type": "Object[]",
             "optional": true,
             "field": "permissions",
@@ -930,13 +895,6 @@
             "optional": true,
             "field": "description",
             "description": "<p>A brief summary about a role if available i.e additional details that clarify what a role for</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String[]",
-            "optional": true,
-            "field": "responsibilities",
-            "description": "<p>A duties, obligation or functions performed(or assigned) to a role.</p>"
           },
           {
             "group": "Success 200",

@@ -23,12 +23,13 @@ describe('Role Patch', () => {
     });
 
     it('should be able to patch', (done) => {
-      role = role.fakeOnly('description');
+      role = role.fakeOnly('description', 'abbreviation');
       Role.patch(role._id, role, (error, updated) => {
         expect(error).to.not.exist;
         expect(updated).to.exist;
         expect(updated._id).to.eql(role._id);
         expect(updated.name).to.eql(role.name);
+        expect(updated.abbreviation).to.be.eql(role.abbreviation);
         done(error, updated);
       });
     });
@@ -58,12 +59,13 @@ describe('Role Patch', () => {
     });
 
     it('should be able to patch', (done) => {
-      role = role.fakeOnly('description');
+      role = role.fakeOnly('description', 'abbreviation');
       role.patch((error, updated) => {
         expect(error).to.not.exist;
         expect(updated).to.exist;
         expect(updated._id).to.eql(role._id);
         expect(updated.name).to.eql(role.name);
+        expect(updated.abbreviation).to.be.eql(role.abbreviation);
         done(error, updated);
       });
     });
