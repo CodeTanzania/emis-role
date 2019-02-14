@@ -1,3 +1,13 @@
+#### 1.3.0 (2019-02-14)
+
+##### New Features
+
+*  allow abbreviation to be updated ([2300939b](https://github.com/CodeTanzania/emis-role/commit/2300939ba96a667256a516a4ef817387c8036e90))
+
+##### Code Style Changes
+
+*  remove responsibilities & type from role apidoc ([03de5480](https://github.com/CodeTanzania/emis-role/commit/03de54805cc5bbcb0d3b5cced3a09d86be854b33))
+
 #### 1.2.0 (2019-02-14)
 
 ##### Refactors
