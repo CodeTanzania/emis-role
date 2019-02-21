@@ -1,3 +1,9 @@
+#### 1.4.0 (2019-02-21)
+
+##### New Features
+
+*  add export plugin and api endpoint ([ffcf10ef](https://github.com/CodeTanzania/emis-role/commit/ffcf10ef38a496bc7aad7de120c2ce520c31bdb8))
+
 #### 1.3.0 (2019-02-14)
 
 ##### New Features
