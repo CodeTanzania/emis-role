@@ -27,7 +27,7 @@
 const { pkg } = require('@lykmapipo/common');
 const { include } = require('@lykmapipo/include');
 const { apiVersion } = require('@lykmapipo/env');
-const app = require('@lykmapipo/express-common');
+const { app, mount } = require('@lykmapipo/express-common');
 const { Permission, permissionRouter } = require('@lykmapipo/permission');
 const Role = include(__dirname, 'lib', 'role.model');
 const roleRouter = include(__dirname, 'lib', 'role.http.router');
@@ -120,8 +120,8 @@ exports.apiVersion = apiVersion();
 Object.defineProperty(exports, 'app', {
   get() {
     /* @todo bind oauth middlewares authenticate, token, authorize */
-    app.mount(permissionRouter);
-    app.mount(roleRouter);
+    mount(permissionRouter);
+    mount(roleRouter);
     return app;
   }
 });
