@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const _ = require('lodash');
 const { waterfall } = require('async');
@@ -8,7 +7,6 @@ const { include } = require('@lykmapipo/include');
 const { connect } = require('@lykmapipo/mongoose-common');
 const { Permission } = require('@lykmapipo/permission');
 const { Role } = include(__dirname, '..');
-
 
 // naive logger
 const log = (stage, error, result) => {
@@ -20,7 +18,6 @@ const log = (stage, error, result) => {
     console.info(`${stage} seed result`, val);
   }
 };
-
 
 // refs
 let seedStart;
@@ -46,7 +43,9 @@ const seedRole = done => {
 const seed = done => {
   seedStart = Date.now();
   connect(error => {
-    if (error) { return done(error); }
+    if (error) {
+      return done(error);
+    }
     waterfall([seedPermission, seedRole], done);
   });
 };

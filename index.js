@@ -1,6 +1,5 @@
 'use strict';
 
-
 /**
  * @module Role
  * @name Role
@@ -22,7 +21,6 @@
  *
  */
 
-
 /* dependencies */
 const { pkg } = require('@lykmapipo/common');
 const { include } = require('@lykmapipo/include');
@@ -31,7 +29,6 @@ const { app, mount } = require('@lykmapipo/express-common');
 const { Permission, permissionRouter } = require('@lykmapipo/permission');
 const Role = include(__dirname, 'lib', 'role.model');
 const roleRouter = include(__dirname, 'lib', 'role.http.router');
-
 
 /**
  * @name info
@@ -43,10 +40,16 @@ const roleRouter = include(__dirname, 'lib', 'role.http.router');
  * @version 0.1.0
  */
 exports.info = pkg(
-  'name', 'description', 'version', 'license',
-  'homepage', 'repository', 'bugs', 'sandbox', 'contributors'
+  'name',
+  'description',
+  'version',
+  'license',
+  'homepage',
+  'repository',
+  'bugs',
+  'sandbox',
+  'contributors'
 );
-
 
 /**
  * @name Permission
@@ -59,7 +62,6 @@ exports.info = pkg(
  */
 exports.Permission = Permission;
 
-
 /**
  * @name Role
  * @description Role model
@@ -70,7 +72,6 @@ exports.Permission = Permission;
  * @version 0.1.0
  */
 exports.Role = Role;
-
 
 /**
  * @name permissionRouter
@@ -83,7 +84,6 @@ exports.Role = Role;
  */
 exports.permissionRouter = permissionRouter;
 
-
 /**
  * @name roleRouter
  * @description role http router
@@ -95,7 +95,6 @@ exports.permissionRouter = permissionRouter;
  */
 exports.roleRouter = roleRouter;
 
-
 /**
  * @name apiVersion
  * @description http router api version
@@ -106,7 +105,6 @@ exports.roleRouter = roleRouter;
  * @version 0.1.0
  */
 exports.apiVersion = apiVersion();
-
 
 /**
  * @name app
@@ -123,5 +121,5 @@ Object.defineProperty(exports, 'app', {
     mount(permissionRouter);
     mount(roleRouter);
     return app;
-  }
+  },
 });

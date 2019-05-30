@@ -1,13 +1,11 @@
 'use strict';
 
-
 /* dependencies */
 const { expect } = require('chai');
 const { include } = require('@lykmapipo/include');
 const { Schema } = require('mongoose');
 const { Permission } = require('@lykmapipo/permission');
 const { Role } = include(__dirname, '..', '..');
-
 
 describe('Role Schema', () => {
   it('should have name field', () => {
@@ -27,7 +25,6 @@ describe('Role Schema', () => {
     expect(name.options.fake).to.exist;
   });
 
-
   it('should have description field', () => {
     const description = Role.path('description');
 
@@ -43,7 +40,6 @@ describe('Role Schema', () => {
   });
 
   it('should have permissions field', () => {
-
     const permissions = Role.path('permissions');
 
     expect(permissions).to.exist;
@@ -57,5 +53,4 @@ describe('Role Schema', () => {
     expect(permissions.options.index).to.be.true;
     expect(permissions.options.autopopulate).to.be.true;
   });
-
 });

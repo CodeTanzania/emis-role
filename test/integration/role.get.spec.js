@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const { expect } = require('chai');
 const { include } = require('@lykmapipo/include');
@@ -8,20 +7,18 @@ const { clear } = require('@lykmapipo/mongoose-test-helpers');
 const { Role } = include(__dirname, '..', '..');
 
 describe('Role Get', () => {
-
-  before((done) => clear(done));
+  before(done => clear(done));
 
   let roles = ['IT Officer', 'Billing Officer', 'Human Resource'];
 
-  before((done) => {
+  before(done => {
     roles = Role.seed((error, created) => {
       roles = created;
       done(error, created);
     });
-
   });
 
-  it('should be able to get without options', (done) => {
+  it('should be able to get without options', done => {
     Role.get((error, results) => {
       expect(error).to.not.exist;
       expect(results).to.exist;
@@ -42,7 +39,7 @@ describe('Role Get', () => {
     });
   });
 
-  it('should be able to get with options', (done) => {
+  it('should be able to get with options', done => {
     const options = { page: 1, limit: 20 };
     Role.get(options, (error, results) => {
       expect(error).to.not.exist;
@@ -64,8 +61,7 @@ describe('Role Get', () => {
     });
   });
 
-
-  it('should be able to search with options', (done) => {
+  it('should be able to search with options', done => {
     const options = { filter: { q: roles[0].wildcard } };
     Role.get(options, (error, results) => {
       expect(error).to.not.exist;
@@ -87,8 +83,7 @@ describe('Role Get', () => {
     });
   });
 
-
-  it('should parse filter options', (done) => {
+  it('should parse filter options', done => {
     const options = { filter: { wildcard: roles[0].wildcard } };
     Role.get(options, (error, results) => {
       expect(error).to.not.exist;
@@ -108,9 +103,7 @@ describe('Role Get', () => {
       expect(results.lastModified).to.exist;
       done(error, results);
     });
-
   });
 
-  after((done) => clear(done));
-
+  after(done => clear(done));
 });
