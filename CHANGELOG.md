@@ -1,3 +1,16 @@
+#### 1.5.0 (2019-05-30)
+
+##### Chores
+
+* **deps:**
+  *  force latest version & audit fix ([092154cf](https://github.com/CodeTanzania/emis-role/commit/092154cfa7db04cface2fd623203889bc82c2203))
+  *  force latest version & audit fix ([b9818ef5](https://github.com/CodeTanzania/emis-role/commit/b9818ef50f4b2d47f68f2de92c87f44bf57e5b53))
+*  force latest dependencies ([540b2de9](https://github.com/CodeTanzania/emis-role/commit/540b2de98227b678798e945cbcff7a27727b5213))
+
+##### Refactors
+
+* **deps:**  use latest apis ([9092829e](https://github.com/CodeTanzania/emis-role/commit/9092829e6099b122240c32a69530fe0272f83707))
+
 #### 1.4.0 (2019-02-21)
 
 ##### New Features
