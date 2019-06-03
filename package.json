@@ -1,6 +1,6 @@
 {
   "name": "@codetanzania/emis-role",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "A representation on how a party(or stakeholder) acts or, in other words, what role party(or stakeholder) plays in event of emergency(or disaster).",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,8 @@
     "doc": "grunt doc",
     "dev": "npm run seed && npm run start",
     "start": "BASE_PATH=./examples node ./examples/app.js",
-    "seed": "BASE_PATH=./examples node ./examples/seed.js"
+    "seed": "BASE_PATH=./examples node ./examples/seed.js",
+    "format": "prettier --write \"{lib,test,.}/**/*.js\" --loglevel silent"
   },
   "repository": {
     "type": "git",
@@ -95,7 +96,7 @@
   "devDependencies": {
     "@benmaruchu/faker": "^4.2.1",
     "@codetanzania/majifix-common": "^0.12.4",
-    "@lykmapipo/mongoose-test-helpers": ">=0.7.4",
+    "@lykmapipo/mongoose-test-helpers": ">=0.7.6",
     "chai": "^4.2.0",
     "grunt": "^1.0.4",
     "grunt-apidoc": "^0.11.0",
@@ -105,15 +106,16 @@
     "jshint-stylish": "^2.2.1",
     "mocha": "^6.1.4",
     "mongoose": ">=5.5.11",
+    "prettier": "^1.17.1",
     "supertest": "^4.0.2"
   },
   "peerDependencies": {
-    "mongoose": ">=5.5.11"
+    "mongoose": ">=5.5.12"
   },
   "dependencies": {
-    "@lykmapipo/common": ">=0.19.0",
-    "@lykmapipo/env": ">=0.7.8",
-    "@lykmapipo/express-common": ">=0.17.3",
+    "@lykmapipo/common": ">=0.19.1",
+    "@lykmapipo/env": ">=0.7.9",
+    "@lykmapipo/express-common": ">=0.17.4",
     "@lykmapipo/include": ">=0.2.4",
     "@lykmapipo/mongoose-exportable": ">=0.3.3",
     "@lykmapipo/permission": ">=0.8.1",

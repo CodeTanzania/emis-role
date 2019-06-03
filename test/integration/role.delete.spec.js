@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const { expect } = require('chai');
 const { include } = require('@lykmapipo/include');
@@ -8,13 +7,12 @@ const { clear } = require('@lykmapipo/mongoose-test-helpers');
 const { Role } = include(__dirname, '..', '..');
 
 describe('Role Delete', () => {
-
-  before((done) => clear(done));
+  before(done => clear(done));
 
   describe('static delete', () => {
     let role;
 
-    before((done) => {
+    before(done => {
       role = Role.fake();
       role.post((error, created) => {
         role = created;
@@ -22,7 +20,7 @@ describe('Role Delete', () => {
       });
     });
 
-    it('should be able to delete', (done) => {
+    it('should be able to delete', done => {
       Role.del(role._id, (error, deleted) => {
         expect(error).to.not.exist;
         expect(deleted).to.exist;
@@ -31,7 +29,7 @@ describe('Role Delete', () => {
       });
     });
 
-    it('should throw if not exists', (done) => {
+    it('should throw if not exists', done => {
       Role.del(role._id, (error, deleted) => {
         expect(error).to.exist;
         // expect(error.status).to.exist;
@@ -40,13 +38,12 @@ describe('Role Delete', () => {
         done();
       });
     });
-
   });
 
   describe('instance delete', () => {
     let role;
 
-    before((done) => {
+    before(done => {
       role = Role.fake();
       role.post((error, created) => {
         role = created;
@@ -54,7 +51,7 @@ describe('Role Delete', () => {
       });
     });
 
-    it('should be able to delete', (done) => {
+    it('should be able to delete', done => {
       role.del((error, deleted) => {
         expect(error).to.not.exist;
         expect(deleted).to.exist;
@@ -63,7 +60,7 @@ describe('Role Delete', () => {
       });
     });
 
-    it('should throw if not exists', (done) => {
+    it('should throw if not exists', done => {
       role.del((error, deleted) => {
         expect(error).to.not.exist;
         expect(deleted).to.exist;
@@ -71,9 +68,7 @@ describe('Role Delete', () => {
         done();
       });
     });
-
   });
 
-  after((done) => clear(done));
-
+  after(done => clear(done));
 });

@@ -1,3 +1,24 @@
+#### 1.5.1 (2019-06-03)
+
+##### Chores
+
+* **deps:**  force latest version & audit fix ([ca17cd86](https://github.com/CodeTanzania/emis-role/commit/ca17cd8606719040e4994b1d72d11df3655e17fb))
+* **gitignore:**  ignore the configuration folders ([d66d5f8a](https://github.com/CodeTanzania/emis-role/commit/d66d5f8a92be1722dee891f8e7060847658003dd))
+*  install and configure prettier ([0e65d0c5](https://github.com/CodeTanzania/emis-role/commit/0e65d0c5d26d15abef00d3954824ac133390440f))
+*  ignore neovim editor configs ([350342e1](https://github.com/CodeTanzania/emis-role/commit/350342e1ba1c87eec53b6cd717c3f073296d9e86))
+
+##### Bug Fixes
+
+* **test:**  resolve roles test ([2dd82b4a](https://github.com/CodeTanzania/emis-role/commit/2dd82b4a97714fcab60cccf15b5045ca030e6272))
+
+##### Refactors
+
+* **model:**  re-implement seed to use new API ([e3d40c33](https://github.com/CodeTanzania/emis-role/commit/e3d40c337a10d6d6dda747bc6c06c77a910d9d88))
+
+##### Code Style Changes
+
+*  format files with prettier ([fde68435](https://github.com/CodeTanzania/emis-role/commit/fde684350f7a4ef4fea0ad2c01653e95f0debc90))
+
 #### 1.5.0 (2019-05-30)
 
 ##### Chores
