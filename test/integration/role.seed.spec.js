@@ -68,18 +68,6 @@ describe('Role Seed', () => {
     });
   });
 
-  it('should seed .env resources', done => {
-    process.env.ROLE_SEEDS = 'IT Officer,Billing Officer';
-    Role.seed((error, seeded) => {
-      expect(error).to.not.exist;
-      expect(seeded).to.exist;
-      expect(seeded).to.length.at.least(1);
-      expect(_.find(seeded, { name: 'IT Officer' })).to.exist;
-      expect(_.find(seeded, { name: 'Billing Officer' })).to.exist;
-      done(error, seeded);
-    });
-  });
-
   it('should be able to seed from environment', done => {
     Role.seed((error, seeded) => {
       expect(error).to.not.exist;

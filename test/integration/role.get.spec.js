@@ -9,10 +9,11 @@ const { Role } = include(__dirname, '..', '..');
 describe('Role Get', () => {
   before(done => clear(done));
 
-  let roles = ['IT Officer', 'Billing Officer', 'Human Resource'];
+  let roles = 
+   [{name:'IT Officer'}, {name: 'Billing Officer'}, {name:'Human Resource'}];
 
   before(done => {
-    roles = Role.seed((error, created) => {
+    roles = Role.seed(roles,(error, created) => {
       roles = created;
       done(error, created);
     });
