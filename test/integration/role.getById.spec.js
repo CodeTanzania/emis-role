@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const _ = require('lodash');
 const { expect } = require('chai');
@@ -9,12 +8,11 @@ const { clear } = require('@lykmapipo/mongoose-test-helpers');
 const { Role } = include(__dirname, '..', '..');
 
 describe('Role GetById', () => {
-
-  before((done) => clear(done));
+  before(done => clear(done));
 
   let role;
 
-  before((done) => {
+  before(done => {
     role = Role.fake();
     role.post((error, created) => {
       role = created;
@@ -22,7 +20,7 @@ describe('Role GetById', () => {
     });
   });
 
-  it('should be able to get an instance', (done) => {
+  it('should be able to get an instance', done => {
     Role.getById(role._id, (error, found) => {
       expect(error).to.not.exist;
       expect(found).to.exist;
@@ -31,11 +29,10 @@ describe('Role GetById', () => {
     });
   });
 
-  it('should be able to get with options', (done) => {
-
+  it('should be able to get with options', done => {
     const options = {
       _id: role._id,
-      select: 'name'
+      select: 'name',
     };
 
     Role.getById(options, (error, found) => {
@@ -47,20 +44,15 @@ describe('Role GetById', () => {
       //...assert selection
       const fields = _.keys(found.toObject());
       expect(fields).to.have.length(2);
-      _.map([
-        'description',
-        'createdAt',
-        'updatedAt'
-      ], function (field) {
+      _.map(['description', 'createdAt', 'updatedAt'], function(field) {
         expect(fields).to.not.include(field);
       });
 
       done(error, found);
     });
-
   });
 
-  it('should throw if not exists', (done) => {
+  it('should throw if not exists', done => {
     const role = Role.fake();
     Role.getById(role._id, (error, found) => {
       expect(error).to.exist;
@@ -71,6 +63,5 @@ describe('Role GetById', () => {
     });
   });
 
-  after((done) => clear(done));
-
+  after(done => clear(done));
 });

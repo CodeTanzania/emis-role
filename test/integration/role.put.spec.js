@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const _ = require('lodash');
 const { expect } = require('chai');
@@ -8,22 +7,20 @@ const { include } = require('@lykmapipo/include');
 const { clear } = require('@lykmapipo/mongoose-test-helpers');
 const { Role } = include(__dirname, '..', '..');
 
-describe('Role Put', function () {
+describe('Role Put', function() {
+  before(done => clear(done));
 
-  before((done) => clear(done));
-
-  describe('static put', function () {
-
+  describe('static put', function() {
     let role = Role.fake();
 
-    before((done) => {
+    before(done => {
       role.post((error, created) => {
         role = created;
         done(error, created);
       });
     });
 
-    it('should be able to put', (done) => {
+    it('should be able to put', done => {
       role = role.fakeOnly('description', 'abbreviation');
       Role.put(role._id, role, (error, updated) => {
         expect(error).to.not.exist;
@@ -35,7 +32,7 @@ describe('Role Put', function () {
       });
     });
 
-    it('should throw if not exists', (done) => {
+    it('should throw if not exists', done => {
       const fake = Role.fake().toObject();
       Role.put(fake._id, _.omit(fake, '_id'), (error, updated) => {
         expect(error).to.exist;
@@ -45,21 +42,19 @@ describe('Role Put', function () {
         done();
       });
     });
-
   });
 
-  describe('instance put', function () {
-
+  describe('instance put', function() {
     let role = Role.fake();
 
-    before((done) => {
+    before(done => {
       role.post((error, created) => {
         role = created;
         done(error, created);
       });
     });
 
-    it('should be able to put', (done) => {
+    it('should be able to put', done => {
       role = role.fakeOnly('description', 'abbreviation');
       role.put((error, updated) => {
         expect(error).to.not.exist;
@@ -71,7 +66,7 @@ describe('Role Put', function () {
       });
     });
 
-    it('should throw if not exists', (done) => {
+    it('should throw if not exists', done => {
       role.put((error, updated) => {
         expect(error).to.not.exist;
         expect(updated).to.exist;
@@ -79,9 +74,7 @@ describe('Role Put', function () {
         done();
       });
     });
-
   });
 
-  after((done) => clear(done));
-
+  after(done => clear(done));
 });

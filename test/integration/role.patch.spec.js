@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const _ = require('lodash');
 const { expect } = require('chai');
@@ -9,21 +8,19 @@ const { clear } = require('@lykmapipo/mongoose-test-helpers');
 const { Role } = include(__dirname, '..', '..');
 
 describe('Role Patch', () => {
-
-  before((done) => clear(done));
+  before(done => clear(done));
 
   describe('static patch', () => {
-
     let role = Role.fake();
 
-    before((done) => {
+    before(done => {
       role.post((error, created) => {
         role = created;
         done(error, created);
       });
     });
 
-    it('should be able to patch', (done) => {
+    it('should be able to patch', done => {
       role = role.fakeOnly('description', 'abbreviation');
       Role.patch(role._id, role, (error, updated) => {
         expect(error).to.not.exist;
@@ -35,7 +32,7 @@ describe('Role Patch', () => {
       });
     });
 
-    it('should throw if not exists', (done) => {
+    it('should throw if not exists', done => {
       const fake = Role.fake().toObject();
       Role.patch(fake._id, _.omit(fake, '_id'), (error, updated) => {
         expect(error).to.exist;
@@ -45,21 +42,19 @@ describe('Role Patch', () => {
         done();
       });
     });
-
   });
 
   describe('instance patch', () => {
-
     let role = Role.fake();
 
-    before((done) => {
+    before(done => {
       role.post((error, created) => {
         role = created;
         done(error, created);
       });
     });
 
-    it('should be able to patch', (done) => {
+    it('should be able to patch', done => {
       role = role.fakeOnly('description', 'abbreviation');
       role.patch((error, updated) => {
         expect(error).to.not.exist;
@@ -71,7 +66,7 @@ describe('Role Patch', () => {
       });
     });
 
-    it('should throw if not exists', (done) => {
+    it('should throw if not exists', done => {
       role.patch((error, updated) => {
         expect(error).to.not.exist;
         expect(updated).to.exist;
@@ -79,9 +74,7 @@ describe('Role Patch', () => {
         done();
       });
     });
-
   });
 
-  after((done) => clear(done));
-
+  after(done => clear(done));
 });

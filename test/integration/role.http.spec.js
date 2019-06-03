@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const request = require('supertest');
 const { expect } = require('chai');
@@ -9,19 +8,18 @@ const { clear } = require('@lykmapipo/mongoose-test-helpers');
 const { Role, apiVersion, app } = include(__dirname, '..', '..');
 
 describe('Role HTTP Spec', () => {
-
-  before((done) => clear(done));
+  before(done => clear(done));
 
   let role = Role.fake();
 
-  before((done) => {
+  before(done => {
     role.post((error, created) => {
       role = created;
       done(error, created);
     });
   });
 
-  it('should handle HTTP GET on /roles', (done) => {
+  it('should handle HTTP GET on /roles', done => {
     request(app)
       .get(`/${apiVersion}/roles`)
       .set('Accept', 'application/json')
@@ -45,11 +43,9 @@ describe('Role HTTP Spec', () => {
       });
   });
 
-  it('should handle HTTP GET on /roles/id:', (done) => {
+  it('should handle HTTP GET on /roles/id:', done => {
     request(app)
-      .get(
-        `/${apiVersion}/roles/${role._id}`
-      )
+      .get(`/${apiVersion}/roles/${role._id}`)
       .set('Accept', 'application/json')
       .expect(200)
       .end((error, response) => {
@@ -65,12 +61,10 @@ describe('Role HTTP Spec', () => {
       });
   });
 
-  it('should handle HTTP PATCH on /roles/id:', (done) => {
+  it('should handle HTTP PATCH on /roles/id:', done => {
     const patch = role.fakeOnly('description');
     request(app)
-      .patch(
-        `/${apiVersion}/roles/${role._id}`
-      )
+      .patch(`/${apiVersion}/roles/${role._id}`)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .send(patch)
@@ -89,12 +83,10 @@ describe('Role HTTP Spec', () => {
       });
   });
 
-  it('should handle HTTP PUT on /roles/id:', (done) => {
+  it('should handle HTTP PUT on /roles/id:', done => {
     const put = role.fakeOnly('description');
     request(app)
-      .put(
-        `/${apiVersion}/roles/${role._id}`
-      )
+      .put(`/${apiVersion}/roles/${role._id}`)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .send(put)
@@ -109,10 +101,8 @@ describe('Role HTTP Spec', () => {
         expect(updated._id).to.be.eql(role._id.toString());
         expect(updated.name).to.be.eql(role.name);
         done(error, response);
-
       });
   });
 
-  after((done) => clear(done));
-
+  after(done => clear(done));
 });
