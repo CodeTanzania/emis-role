@@ -1,6 +1,6 @@
 {
   "name": "@codetanzania/emis-role",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "A representation on how a party(or stakeholder) acts or, in other words, what role party(or stakeholder) plays in event of emergency(or disaster).",
   "main": "index.js",
   "scripts": {
