@@ -1,3 +1,13 @@
+#### 1.5.2 (2019-06-19)
+
+##### Chores
+
+* **deps:**  force latest version & audit fix ([907ee316](https://github.com/CodeTanzania/emis-role/commit/907ee3166461f364681abe45805bacf3275fb322))
+
+##### Code Style Changes
+
+*  prettify the source ([ff7e8dd1](https://github.com/CodeTanzania/emis-role/commit/ff7e8dd1a5688bc20c349a9d888fe012ef73b257))
+
 #### 1.5.1 (2019-06-03)
 
 ##### Chores
